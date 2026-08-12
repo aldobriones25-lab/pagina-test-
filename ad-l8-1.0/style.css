@@ -1,0 +1,20 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  body{
+    background-color: rgb(25, 51, 42)!important;
+  }
+  .navbar-morado {
+  background-color: #6f42c1; /* morado elegante */
+}
+
+  img{
+    
+    margin-left: 220px;
+    height: 150px;
+  }
+  #gara{
+    height: 250px;
+    width: auto;
+  }
