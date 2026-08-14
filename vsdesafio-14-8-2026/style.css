@@ -1,0 +1,129 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================================================== */
+:root {
+  --primary-color: #3b82f6;    /* Azul moderno */
+  --secondary-color: #10b981;  /* Verde esmeralda */
+  --dark-color: #1f2937;       /* Gris oscuro para texto/fondos */
+  --light-color: #f3f4f6;      /* Gris claro para el fondo */
+  --card-bg: #ffffff;          /* Blanco para las secciones */
+  --text-color: #4b5563;       /* Gris intermedio para párrafos */
+  --transition: all 0.3s ease;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN (Flexbox)
+   ========================================================================== */
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+nav {
+  background-color: var(--dark-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: var(--transition);
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* ==========================================================================
+   3. CONTENIDO PRINCIPAL (CSS Grid Responsivo)
+   ========================================================================== */
+main {
+  flex: 1; /* Empuja el footer hacia abajo si hay poco contenido */
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
+  /* GRID MÁGICO: Crea columnas automáticamente según el espacio disponible */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Estilos para cada una de las 5 secciones de contenido */
+main section {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border-left: 5px solid var(--primary-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+/* Efecto creativo al pasar el mouse */
+main section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--secondary-color);
+}
+
+main section h2 {
+  color: var(--dark-color);
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+}
+
+main section p {
+  color: var(--text-color);
+}
+
+/* ==========================================================================
+   4. PIE DE PÁGINA
+   ========================================================================== */
+footer {
+  background-color: var(--dark-color);
+  color: #9ca3af;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  font-size: 0.95rem;
+}
